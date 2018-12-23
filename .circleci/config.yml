@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: chronushadow/clang:6.0.0
+      - image: chronushadow/clang:bionic
       
     working_directory: ~/circleci-clang
 
@@ -10,20 +10,8 @@ jobs:
       - checkout
         
       # run tests!
-      # this example uses Django's built-in test-runner
-      # other common Python testing frameworks include pytest and nose
-      # https://pytest.org
-      # https://nose.readthedocs.io
       - run:
           name: run tests
           command: |
-            echo "Compiling unit tests..."
-            clang -c add.c
-            clang++ -lgtest -std=c++11 -pthread -g -Wall -Wextra -o unit_test.o -c test.cpp
-            clang++ -std=c++11 -g -Wall -Wextra -o unit_test add.o unit_test.o -lgtest -pthread
-            echo "Running unit tests..."
-            ./unit_test -v
-            result=$?
-            rm -r unit_test add.o unit_test.o
-            exit $result
+            ./build.sh
           
