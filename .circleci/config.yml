@@ -13,5 +13,6 @@ jobs:
       - run:
           name: run tests
           command: |
+            chmod a+x build.sh
             ./build.sh
           
