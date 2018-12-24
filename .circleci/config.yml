@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: chronushadow/clang:bionic
+      - image: whill/clang-gtest:0.0.1
       
     working_directory: ~/circleci-clang
 
