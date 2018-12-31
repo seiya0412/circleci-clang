@@ -1,10 +1,9 @@
 #include "queue.h"
 
 
-queue_t generate_queue()
+bool allocate_queue(queue_t q, uint16_t size)
 {
-    queue_t q;
-    return q;
+    return false;
 }
 
 void enqueue()

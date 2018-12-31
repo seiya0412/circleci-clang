@@ -1,16 +1,18 @@
 #pragma once
 
+#include <stdbool.h>
 #include <stdint.h>
 
+
 typedef struct{
-    char *buff;
     uint16_t size;
+    uint16_t residual;
     uint16_t head;
     uint16_t tail;
+    char *buff;
 } queue_struct;
+typedef queue_struct* queue_t;
 
-typedef struct queue_struct* queue_t;
-
-queue_t generate_queue();
+bool allocate_queue(queue_t q, uint16_t size);
 void enqueue();
 void dequeue();
