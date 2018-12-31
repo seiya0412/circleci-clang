@@ -23,29 +23,30 @@ namespace{
 
   };
 
-TEST_F(QueueTest, EnqueueWorks)
-{
+  TEST_F(QueueTest, EnqueueWorks)
+  {
 
-}
+  }
 
-TEST_F(QueueTest, DequeueWorks)
-{
+  TEST_F(QueueTest, DequeueWorks)
+  {
 
-}
+  }
 
-TEST_F(QueueTest, IsEmptyInitially)
-{
+  TEST_F(QueueTest, IsEmptyInitially)
+  {
 
-}
+  }
 
-TEST_F(QueueTest, EnqueueWhenFull)
-{
+  TEST_F(QueueTest, EnqueueWhenFull)
+  {
 
-}
+  }
 
-TEST(QueueTest, DequeueWhenEmpty)
-{
+  TEST_F(QueueTest, DequeueWhenEmpty)
+  {
 
+  }
 }
     
 int main(int argc, char **argv)
@@ -53,4 +54,3 @@ int main(int argc, char **argv)
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
-};
