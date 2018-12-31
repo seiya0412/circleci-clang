@@ -23,17 +23,22 @@ namespace{
 
   };
 
+  TEST_F(QueueTest, IsBufferNotNull)
+  {
+    EXPECT_EQ(NULL, q1_.buff);
+  }
+
+  TEST_F(QueueTest, IsEmptyInitially)
+  {
+    EXPECT_EQ(0, q1_.size);
+  }
+
   TEST_F(QueueTest, EnqueueWorks)
   {
 
   }
 
   TEST_F(QueueTest, DequeueWorks)
-  {
-
-  }
-
-  TEST_F(QueueTest, IsEmptyInitially)
   {
 
   }
