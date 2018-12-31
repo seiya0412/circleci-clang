@@ -11,7 +11,7 @@ namespace{
     protected:
       QueueTest()
       {
-        bool alloc_success = allocate_queue(q1_, 16);
+        allocate_queue(q1_, 16);
       }
 
       virtual ~QueueTest()
@@ -27,9 +27,16 @@ namespace{
   {
     queue_t q;
     EXPECT_TRUE(allocate_queue(q, 16));
+    EXPECT_TRUE(free_queue(q));
+
     EXPECT_TRUE(allocate_queue(q, 100));
+    EXPECT_TRUE(free_queue(q));
+
     EXPECT_FALSE(allocate_queue(q, 0));
+    EXPECT_FALSE(free_queue(q));
+
     EXPECT_FALSE(allocate_queue(q, -1));
+    EXPECT_FALSE(free_queue(q));
   }
 
   TEST_F(QueueTest, IsBufferNotNull)

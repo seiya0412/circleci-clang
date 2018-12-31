@@ -26,6 +26,16 @@ bool allocate_queue(queue_t q, int32_t size)
     return false;
 }
 
+bool free_queue(queue_t q)
+{
+    if(q != NULL)
+    {
+        free(q);
+        return true;
+    } 
+    return true;
+}
+
 void enqueue()
 {
 
