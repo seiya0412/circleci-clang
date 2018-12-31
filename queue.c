@@ -1,8 +1,13 @@
 #include "queue.h"
 
 
-bool allocate_queue(queue_t q, uint16_t size)
+bool allocate_queue(queue_t q, int32_t size)
 {
+    if(size <= 0)
+    {
+        return false;
+    }
+
     q = malloc(sizeof(queue_struct));
     if(q != NULL)
     {

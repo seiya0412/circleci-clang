@@ -15,6 +15,6 @@ typedef struct{
 } queue_struct;
 typedef queue_struct* queue_t;
 
-bool allocate_queue(queue_t q, uint16_t size);
+bool allocate_queue(queue_t q, int32_t size);
 void enqueue();
 void dequeue();
