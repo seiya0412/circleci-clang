@@ -1,13 +1,49 @@
 #include <gtest/gtest.h>
 extern "C"
 {
-#include "add.h"
+  #include "queue.h"
 }
 
-TEST(SetAddTest, AddInsideOfRange)
+namespace{
+
+  class QueueTest : public ::testing::Test
+  {
+    protected:
+      QueueTest()
+      {
+        queue_t q = generate_queue();
+      }
+
+      virtual ~QueueTest()
+      {
+
+      }
+
+  }
+
+TEST_F(QueueTest, EnqueueWorks)
 {
-  EXPECT_EQ(3, add(1,2));
-  EXPECT_EQ(4, add(2,2));
+
+}
+
+TEST_F(QueueTest, DequeueWorks)
+{
+
+}
+
+TEST_F(QueueTest, IsEmptyInitially)
+{
+
+}
+
+TEST_F(QueueTest, EnqueueWhenFull)
+{
+
+}
+
+TEST(QueueTest, DequeueWhenEmpty)
+{
+
 }
     
 int main(int argc, char **argv)
@@ -15,3 +51,4 @@ int main(int argc, char **argv)
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
+};
