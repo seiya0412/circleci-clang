@@ -46,7 +46,9 @@ namespace{
 
   TEST_F(QueueTest, IsEmptyInitially)
   {
-    EXPECT_EQ(0, q1_->size);
+    EXPECT_EQ(0, q1_->tail);
+    EXPECT_EQ(0, q1_->head);
+    EXPECT_EQ(0, q1_->residual);
   }
 
   TEST_F(QueueTest, EnqueueWorks)
