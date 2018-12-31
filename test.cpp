@@ -11,13 +11,15 @@ namespace{
     protected:
       QueueTest()
       {
-        queue_t q = generate_queue();
+        q1_ = generate_queue();
       }
 
       virtual ~QueueTest()
       {
 
       }
+
+      queue_t q1_;
 
   };
 
