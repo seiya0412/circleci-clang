@@ -9,7 +9,7 @@ typedef struct{
     uint16_t residual;
     uint16_t head;
     uint16_t tail;
-    char *buff;
+    uint8_t *buff;
 } queue_struct;
 typedef queue_struct* queue_t;
 
