@@ -9,6 +9,6 @@ typedef struct{
     uint16_t tail;
 } queue_t;
 
-void generate_queue();
+queue_t generate_queue();
 void enqueue();
 void dequeue();
