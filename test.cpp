@@ -25,12 +25,12 @@ namespace{
 
   TEST_F(QueueTest, IsBufferNotNull)
   {
-    EXPECT_NE(NULL, q1_.buff);
+    EXPECT_NE(NULL, q1_->buff);
   }
 
   TEST_F(QueueTest, IsEmptyInitially)
   {
-    EXPECT_EQ(0, q1_.size);
+    EXPECT_EQ(0, q1_->size);
   }
 
   TEST_F(QueueTest, EnqueueWorks)
