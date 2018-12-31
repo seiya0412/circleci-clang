@@ -19,7 +19,7 @@ namespace{
 
       }
 
-  }
+  };
 
 TEST_F(QueueTest, EnqueueWorks)
 {
