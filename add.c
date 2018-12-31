@@ -1,5 +1,5 @@
 #include "add.h"
 
 int add(int i, int j) {
-    return i;
+    return i + j;
 }
