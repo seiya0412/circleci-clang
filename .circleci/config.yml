@@ -6,9 +6,9 @@ jobs:
       
     working_directory: ~/circleci-clang
 
-    branches:
-      - only:
-        - add-source-and-ci-config
+    filters:
+      branches:
+        only: add-source-and-ci-config
 
     steps:
       - checkout
