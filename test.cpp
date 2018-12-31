@@ -25,7 +25,7 @@ namespace{
 
   TEST_F(QueueTest, IsBufferNotNull)
   {
-    EXPECT_EQ(NULL, q1_.buff);
+    EXPECT_NE(NULL, q1_.buff);
   }
 
   TEST_F(QueueTest, IsEmptyInitially)
