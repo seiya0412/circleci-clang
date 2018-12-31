@@ -34,7 +34,7 @@ namespace{
 
   TEST_F(QueueTest, IsBufferNotNull)
   {
-    EXPECT_NE(NULL, q1_->buff);
+    EXPECT_TRUE(q1_->buff != NULL);
   }
 
   TEST_F(QueueTest, IsEmptyInitially)
