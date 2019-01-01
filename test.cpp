@@ -61,7 +61,7 @@ namespace{
     EXPECT_FALSE(enqueue(q1_, 'a'));
     for(int i = 0; i < size_q1_; ++i)
     {
-      EXPECT_NE(q1->buff[i], 'a');
+      EXPECT_NE(q1_->buff[i], 'a');
     }
   }
 
