@@ -55,7 +55,7 @@ namespace{
     {
       EXPECT_TRUE(enqueue(q1_, i));
       EXPECT_EQ(q1_->buff[q1_->tail], i);
-      printf("%u, ", q1_->buff[q1->tail]);
+      printf("%u, ", q1_->buff[q1_->tail]);
     }
 
     EXPECT_FALSE(enqueue(q1_, 'a'));
