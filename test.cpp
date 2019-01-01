@@ -75,14 +75,14 @@ namespace{
     uint8_t data;
     for(int i = 0; i < size_q1_; ++i)
     {
-      EXPECT_TRUE(dequeue(q1_, data&));
+      EXPECT_TRUE(dequeue(q1_, &data));
       residual_q1_--;
       EXPECT_EQ(i, data);
       EXPECT_EQ((i + 1) % size_q1_, q1_->head);
       EXPECT_EQ(residual_q1_, q1_->residual);
     }
 
-    EXPECT_FALSE(dequeue(q1_, data&));
+    EXPECT_FALSE(dequeue(q1_, &data));
   }
 
   TEST_F(QueueTest, EnqueueWhenFull)
