@@ -11,7 +11,8 @@ namespace{
     protected:
       QueueTest()
       {
-        q1_ = allocate_queue(16);
+        size_q1_ = 16;
+        q1_ = allocate_queue(size_q1_);
       }
 
       virtual ~QueueTest()
@@ -54,14 +55,14 @@ namespace{
     for(int i = 0; i < size_q1_; ++i)
     {
       EXPECT_TRUE(enqueue(q1_, i));
-      EXPECT_EQ(q1_->buff[q1_->tail], i);
+      EXPECT_EQ(i, q1_->buff[q1_->tail]);
       printf("%u, ", q1_->buff[q1_->tail]);
     }
 
     EXPECT_FALSE(enqueue(q1_, 'a'));
     for(int i = 0; i < size_q1_; ++i)
     {
-      EXPECT_NE(q1_->buff[i], 'a');
+      EXPECT_NE('a', q1_->buff[i]);
     }
   }
 
