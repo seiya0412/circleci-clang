@@ -55,7 +55,7 @@ namespace{
     for(int i = 0; i < size_q1_; ++i)
     {
       EXPECT_TRUE(enqueue(q1_, i));
-      EXPECT_EQ(i, q1_->buff[q1_->tail]);
+      EXPECT_EQ(i, q1_->buff[q1_->tail - 1]);
     }
 
     EXPECT_FALSE(enqueue(q1_, 'a'));

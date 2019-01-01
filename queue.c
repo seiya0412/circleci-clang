@@ -47,7 +47,7 @@ bool enqueue(queue_t q, uint8_t data)
     q->tail = q->tail % q->size;
     
     printf("%s: data=%u, buff=%u, res=%d, tail=%d\n"
-            , __func__, data, q->buff[q->tail]
+            , __func__, data, q->buff[q->tail - 1]
             , q->residual, q->tail);
     return true;
 }
