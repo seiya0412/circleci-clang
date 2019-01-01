@@ -11,6 +11,7 @@ namespace{
     protected:
       QueueTest()
       {
+        residual_q1_ = 0;
         size_q1_ = 16;
         q1_ = allocate_queue(size_q1_);
       }
@@ -22,6 +23,7 @@ namespace{
 
       queue_t q1_;
       int32_t size_q1_;
+      int32_t residual_q1_;
 
   };
 
@@ -55,7 +57,10 @@ namespace{
     for(int i = 0; i < size_q1_; ++i)
     {
       EXPECT_TRUE(enqueue(q1_, i));
-      EXPECT_EQ(i, q1_->buff[q1_->tail - 1]);
+      residual_q1_++;
+      EXPECT_EQ(i, q1_->buff[i]);
+      EXPECT_EQ((i + 1) % size_q1_, q1_->tail);
+      EXPECT_EQ(residual_q1_, q1_->residual);
     }
 
     EXPECT_FALSE(enqueue(q1_, 'a'));
@@ -67,7 +72,17 @@ namespace{
 
   TEST_F(QueueTest, DequeueWorks)
   {
+    uint8_t data;
+    for(int i = 0; i < size_q1_; ++i)
+    {
+      EXPECT_TRUE(dequeue(q1_, data&));
+      residual_q1_--;
+      EXPECT_EQ(i, data);
+      EXPECT_EQ((i + 1) % size_q1_, q1_->head);
+      EXPECT_EQ(residual_q1_, q1_->residual);
+    }
 
+    EXPECT_FALSE(dequeue(q1_, data&));
   }
 
   TEST_F(QueueTest, EnqueueWhenFull)
