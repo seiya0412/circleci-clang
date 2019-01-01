@@ -34,7 +34,7 @@ bool free_queue(queue_t q)
         free(q);
         return true;
     } 
-    return true;
+    return false;
 }
 
 void enqueue()
