@@ -54,14 +54,14 @@ namespace{
     for(int i = 0; i < size_q1_; ++i)
     {
       EXPECT_TRUE(enqueue(q1_, i));
-      EXPECT_EQ(q1_.buff[q1_.tail], i);
-      printf("%u, ", q1_.buff[q1_.tail]);
+      EXPECT_EQ(q1_->buff[q1_->tail], i);
+      printf("%u, ", q1_->buff[q1->tail]);
     }
 
     EXPECT_FALSE(enqueue(q1_, 'a'));
     for(int i = 0; i < size_q1_; ++i)
     {
-      EXPECT_NE(q1_.buff[i], 'a');
+      EXPECT_NE(q1->buff[i], 'a');
     }
   }
 

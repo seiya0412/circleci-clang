@@ -37,12 +37,34 @@ bool free_queue(queue_t q)
     return false;
 }
 
-void enqueue()
+bool enqueue(queue_t q, uint8_t data)
 {
+    if(is_full(q)) return false;
 
+    q->buff[q->tail] = data;
+    q->residual++;
+    q->tail++;
+    q->tail = q->tail % q->size;
+    return true;
 }
 
-void dequeue()
+bool dequeue(queue_t q, uint8_t *data)
 {
+    if(is_empty(q)) return false;
 
+    *data = q->buff[q->head];
+    q->residual--;
+    q->head++;
+    q->head = q->head % q->size;
+    return true;
+}
+
+bool is_full(queue_t q)
+{
+    return (q->residual >= q->size);
+}
+
+bool is_empty(queue_t q)
+{
+    return (q->residual <= 0);
 }
