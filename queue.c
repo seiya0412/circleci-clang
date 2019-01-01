@@ -9,14 +9,14 @@ queue_t allocate_queue(int32_t size)
         return NULL;
     }
 
-    q = malloc(sizeof(queue_struct));
+    q = (queue_t)malloc(sizeof(queue_struct));
     if(q != NULL)
     {
         q->size = size;
         q->residual = 0;
         q->head = 0;
         q->tail = 0;
-        q->buff = malloc(sizeof(q->buff[0]) * size);
+        q->buff = (uint8_t *)malloc(sizeof(q->buff[0]) * size);
         if(q->buff != NULL)
         {
             return q; 
