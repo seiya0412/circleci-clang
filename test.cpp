@@ -27,11 +27,11 @@ namespace{
   {
     queue_t q;
     q = allocate_queue(16);
-    EXPECT_NE(q, NULL);
+    EXPECT_TRUE(q != NULL);
     EXPECT_TRUE(free_queue(q));
 
     q = allocate_queue(-1);
-    EXPECT_EQ(q, NULL);
+    EXPECT_TRUE(q == NULL);
     EXPECT_FALSE(free_queue(q));
   }
 
