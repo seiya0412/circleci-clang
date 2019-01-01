@@ -15,7 +15,8 @@ typedef struct{
 } queue_struct;
 typedef queue_struct* queue_t;
 
-bool allocate_queue(queue_t q, int32_t size);
+queue_t allocate_queue(int32_t size);
 bool free_queue(queue_t q);
 void enqueue();
 void dequeue();
+bool is_empty();

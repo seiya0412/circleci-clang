@@ -1,11 +1,12 @@
 #include "queue.h"
 
 
-bool allocate_queue(queue_t q, int32_t size)
+queue_t allocate_queue(int32_t size)
 {
+    queue_t q;
     if(size <= 0)
     {
-        return false;
+        return NULL;
     }
 
     q = malloc(sizeof(queue_struct));
@@ -18,12 +19,12 @@ bool allocate_queue(queue_t q, int32_t size)
         q->buff = malloc(sizeof(q->buff[0]) * size);
         if(q->buff != NULL)
         {
-            return true; 
+            return q; 
         }
 
     }
     free(q);
-    return false;
+    return NULL;
 }
 
 bool free_queue(queue_t q)
