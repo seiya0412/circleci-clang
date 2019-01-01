@@ -7,10 +7,10 @@
 
 
 typedef struct{
-    uint16_t size;
-    uint16_t residual;
-    uint16_t head;
-    uint16_t tail;
+    int32_t size;
+    int32_t residual;
+    int32_t head;
+    int32_t tail;
     uint8_t *buff;
 } queue_struct;
 typedef queue_struct* queue_t;

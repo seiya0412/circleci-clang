@@ -20,6 +20,7 @@ namespace{
       }
 
       queue_t q1_;
+      int32_t size_q1_;
 
   };
 
@@ -45,11 +46,23 @@ namespace{
     EXPECT_EQ(0, q1_->tail);
     EXPECT_EQ(0, q1_->head);
     EXPECT_EQ(0, q1_->residual);
+    EXPECT_EQ(size_q1_, q1_->size);
   }
 
   TEST_F(QueueTest, EnqueueWorks)
   {
+    for(int i = 0; i < size_q1_; ++i)
+    {
+      EXPECT_TRUE(enqueue(q1_, i));
+      EXPECT_EQ(q1_.buff[q1_.tail], i);
+      printf("%u, ", q1_.buff[q1_.tail]);
+    }
 
+    EXPECT_FALSE(enqueue(q1_, 'a'));
+    for(int i = 0; i < size_q1_; ++i)
+    {
+      EXPECT_NE(q1_.buff[i], 'a');
+    }
   }
 
   TEST_F(QueueTest, DequeueWorks)
